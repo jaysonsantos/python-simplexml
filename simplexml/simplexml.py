@@ -24,6 +24,12 @@ class XMLTree(object):
                     self.nodes[n.tag].append(xmlnode)
             else:
                 self.nodes[n.tag] = xmlnode
+    
+    def trait_names(self):
+        """
+        used to work with tabs in ipython and ipdb
+        """
+        return self.nodes
 
     def __unicode__(self):
         return unicode(dict((k, str(v)) for k, v in self.nodes.iteritems()))
